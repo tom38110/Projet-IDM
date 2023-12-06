@@ -40,3 +40,4 @@
 #########
 # ignore all files in any directory named .metadata
 .metadata/
+bin/
