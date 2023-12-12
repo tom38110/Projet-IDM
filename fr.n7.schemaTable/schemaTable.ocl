@@ -1,0 +1,46 @@
+import 'schemaTable.ecore'
+
+package schematable
+
+context SchemaTable
+-- Le nom du schéma de table est non null
+inv NonNull_nom('Le nom de "' + self.toString() + '" est null'):
+	self.nom <> null
+
+-- Les identifiants des colonnes sont différents de celui de la colonne d'identifiant
+inv Different_id:
+	self.colonnes ->
+	collect(c|c.oclAsType(Colonne)) ->
+	forAll(c|c.id <> self.colonneid.id)
+
+-- Les colonnes ont le même nombre de ligne que la colonne d'identifiant
+inv Meme_nbLigne:
+	self.colonnes ->
+	collect(c|c.oclAsType(Colonne)) ->
+	forAll(c|c.nbLigne = self.colonneid.nbLigne)
+
+context ColonneID
+-- Le nom de la colonne d'identifiant n'est pas null
+inv NonNull_nom_col_id('Le nom de "' + self.toString() + '" est null'):
+	self.nom <> null
+
+-- L'identifiant de la colonne d'identifiant n'est pas null
+inv NonNull_id_col_id('L\'id de "' + self.toString() + '" est null'):
+	self.id <> null
+
+context Colonne
+-- Le nom des colonnes n'est pas null
+inv NonNull_nom_col('Le nom de "' + self.toString() + '" est null'):
+	self.nom <> null
+
+-- L'identifiant des colonnes n'est pas null
+inv NonNull_id_col('L\'id de "' + self.toString() +'" est null'):
+	self.id <> null
+ 
+-- Les colonnes ont un identifiant unique
+inv Different_id_c:
+	self.SchemaTable.colonnes ->
+	collect(c|c.oclAsType(Colonne)) ->
+	forAll(c|self=c or self.id <> c.id)
+
+endpackage
