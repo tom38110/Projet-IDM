@@ -15,6 +15,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" upperBound="-1"
         eType="#//Donnee" containment="true" eOpposite="#//Donnee/colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedBy" eType="ecore:EClass ../fr.n7.algorithme/algorithme.ecore#//Algorithme"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneID">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
