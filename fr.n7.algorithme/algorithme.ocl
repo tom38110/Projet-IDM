@@ -1,0 +1,33 @@
+import 'algorithme.ecore'
+
+package algorithme
+
+context Algorithme
+-- Le nom de l'algorithme ne doit pas être null
+inv NonNull_nom('Le nom de "' + self.toString()+ '" est null'):
+	self.nom <> null
+
+-- Les noms des algorithmes doivent être uniques
+inv Different_nom_algo:
+    Algorithme.allInstances()->forAll(a | self = a or self.nom <> a.nom)
+    
+context Catalogue
+-- tous les noms des algorithmes du catalogue sont différents
+inv Tous_noms_algorithmes_differents:
+	self.algorithmes -> 
+	collect(a|a.oclAsType(Algorithme))	->
+	 forAll(a | self = a or self.nom <> a.nom )
+
+context Ressource
+-- les ressources à réaliser filepath ne doit pas être nulle
+inv RessourceNonNull: 
+	self.chemin <> null 
+
+
+context Port
+-- le nom du port ne doit pas être nulle
+inv NonNull_nomport('Le nom de "'+ self.toString()+ '"est null'):
+ self.nom<> null
+ 
+
+endpackage
