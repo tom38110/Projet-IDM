@@ -25,6 +25,7 @@
     <donnees
         valeur="133.0"
         idligne="//@colonneid/@ids.4"/>
+    <reference/>
   </colonnes>
   <colonnes
       id="banque.finance.raw.high"

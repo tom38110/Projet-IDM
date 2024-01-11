@@ -15,7 +15,11 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" upperBound="-1"
         eType="#//Donnee" containment="true" eOpposite="#//Donnee/colonne"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="computedBy" eType="ecore:EClass ../fr.n7.algorithme/algorithme.ecore#//Algorithme"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deriveDe" eType="ecore:EClass ../fr.n7.algorithme/algorithme.ecore#//Algorithme"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"
+        eType="#//ContrainteColonne" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Reference"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneID">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -37,5 +41,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" upperBound="-1"
         eType="#//Donnee" eOpposite="#//Donnee/idligne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContrainteColonne">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicat" lowerBound="1"
+        eType="#//Predicat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneComparee" eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Predicat">
+    <eLiterals name="SuperieureA"/>
+    <eLiterals name="InferieureA" value="1"/>
+    <eLiterals name="Positive" value="2"/>
+    <eLiterals name="StrictPositive" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idColonneReferencee" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableEtrangere" lowerBound="1"
+        eType="#//SchemaTable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonneEtrangere" lowerBound="1"
+        eType="#//Colonne"/>
   </eClassifiers>
 </ecore:EPackage>

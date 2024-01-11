@@ -34,7 +34,7 @@ inv NonNull_nom_col('Le nom de "' + self.toString() + '" est null'):
 	self.nom <> null
 
 -- L'identifiant des colonnes n'est pas null
-inv NonNull_id_col('L\'id de "' + self.toString() +'" est null'):
+inv NonNull_id_col('L\'id de "' + self.toString() + '" est null'):
 	self.id <> null
  
 -- Les colonnes ont un identifiant unique
@@ -42,5 +42,14 @@ inv Different_id_c:
 	self.SchemaTable.colonnes ->
 	collect(c|c.oclAsType(Colonne)) ->
 	forAll(c|self=c or self.id <> c.id)
+
+context ContrainteColonne
+-- les contraintes sont valides
+inv Valid_contrainte('Une contrainte n\'est pas valide'):
+	if self.colonneComparee.oclIsUndefined() then
+		self.predicat <> Predicat::SuperieureA and self.predicat <> Predicat::InferieureA
+	else
+		true
+	endif
 
 endpackage

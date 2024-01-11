@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schematable:SchemaTable
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:schematable="http://schematable"
+    xsi:schemaLocation="http://schematable schemaTable.ecore"
+    nom="Analyse">
+  <colonnes
+      id="banque.finance.ouverture"
+      nom="Ouverture">
+    <reference/>
+  </colonnes>
+</schematable:SchemaTable>
