@@ -38,7 +38,8 @@
         eType="#//IDLigne" eOpposite="#//IDLigne/donnees"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IDLigne">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="donnees" upperBound="-1"
         eType="#//Donnee" eOpposite="#//Donnee/idligne"/>
   </eClassifiers>
