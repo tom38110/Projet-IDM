@@ -8,27 +8,34 @@
 <head><title>[aSchemaTable.nom/]</title></head>
 <body>
 	<h1>Schema de Table "[aSchemaTable.nom/]"</h1>
-		<table style="width:100%">
+		<table border="1">
 			<thead>
-				
+				[let colonneid : OrderedSet(ColonneID) = aSchemaTable.getColonnesID()]
+					[for (cid : ColonneID | colonneid)]
+						<th> [cid.nom/] </th>
+					[/for]
+				[/let]
 				[let colonne : OrderedSet(Colonne) = aSchemaTable.getColonnes()]
-					[for (c : Colonne | colonnes)]
+					[for (c : Colonne | colonne)]
 						<th> [c.nom/] </th>
 					[/for]
 				[/let]
 			</thead>
 			<tbody>
-					[let data : OrderedSet(Donnee) = aSchemaTable.getDonnes()]
-						[for (d : Donnee | data)]
-						<tr>
-							[let colonne : OrderedSet(Colonne) = aSchemaTable.getColonnes()]
-								[for (c : Colonne | colonne)]
-									<td> [d.valeur/] </td>
-								[/for]
-							[/let]
-						</tr>
-					[/for]
-				[/let]
+						
+						[let ids : OrderedSet(IDLigne) = aSchemaTable.getIDLigne()]
+							[for (id : IDLigne | ids)]
+							<tr>
+									
+										<td> [id.valeur/] </td>
+										[for (d : Donnee | id.donnees)]
+											<td> [d.valeur/] </td>
+										[/for]
+								
+							</tr>
+							
+							[/for]
+						[/let]
 			</tbody>
 		</table>
 </body>
@@ -41,8 +48,27 @@
 		->asOrderedSet()
 /]
 
+[query public getColonnesID(s: SchemaTable) : OrderedSet(ColonneID) = 
+	s.colonneid -> select( c | c.oclIsTypeOf(ColonneID) )
+		->collect( c | c.oclAsType(ColonneID) )
+		->asOrderedSet()
+/]
+
 [query public getDonnes(s: SchemaTable) : OrderedSet(Donnee) = 
 	s.colonnes.donnees -> select( d | d.oclIsTypeOf(Donnee) )
+		->collect( d | d.oclAsType(Donnee) )
+		->asOrderedSet()
+/]
+
+[query public getIDLigne(s: SchemaTable) : OrderedSet(IDLigne) = 
+	s.colonneid.ids -> select( d | d.oclIsTypeOf(IDLigne) )
+		->collect( d | d.oclAsType(IDLigne) )
+		->asOrderedSet()
+/]
+
+[query public getDonnesID(s: SchemaTable) : OrderedSet(Donnee) = 
+	s.colonneid.ids.donnees
+ -> select( d | d.oclIsTypeOf(Donnee) )
 		->collect( d | d.oclAsType(Donnee) )
 		->asOrderedSet()
 /]
