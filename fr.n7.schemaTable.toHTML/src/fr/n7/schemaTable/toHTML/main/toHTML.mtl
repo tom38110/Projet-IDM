@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module toHTML('http://schematable')]
+
+
+[template public schemaTableToHTML(aSchemaTable : SchemaTable)]
+[comment @main/]
+[file (aSchemaTable.nom + '.html', false, 'UTF-8')]
+<head><title>[aSchemaTable.nom/]</title></head>
+<body>
+	<h1>Schema de Table "[aSchemaTable.nom/]"</h1>
+		<table style="width:100%">
+			<thead>
+				
+				[let colonne : OrderedSet(Colonne) = aSchemaTable.getColonnes()]
+					[for (c : Colonne | colonnes)]
+						<th> [c.nom/] </th>
+					[/for]
+				[/let]
+			</thead>
+			<tbody>
+					[let data : OrderedSet(Donnee) = aSchemaTable.getDonnes()]
+						[for (d : Donnee | data)]
+						<tr>
+							[let colonne : OrderedSet(Colonne) = aSchemaTable.getColonnes()]
+								[for (c : Colonne | colonne)]
+									<td> [d.valeur/] </td>
+								[/for]
+							[/let]
+						</tr>
+					[/for]
+				[/let]
+			</tbody>
+		</table>
+</body>
+[/file]
+[/template]
+
+[query public getColonnes(s: SchemaTable) : OrderedSet(Colonne) = 
+	s.colonnes -> select( c | c.oclIsTypeOf(Colonne) )
+		->collect( c | c.oclAsType(Colonne) )
+		->asOrderedSet()
+/]
+
+[query public getDonnes(s: SchemaTable) : OrderedSet(Donnee) = 
+	s.colonnes.donnees -> select( d | d.oclIsTypeOf(Donnee) )
+		->collect( d | d.oclAsType(Donnee) )
+		->asOrderedSet()
+/]
