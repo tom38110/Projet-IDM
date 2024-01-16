@@ -28,6 +28,11 @@ inv NonNull_nom_col_id('Le nom de "' + self.toString() + '" est null'):
 inv NonNull_id_col_id('L\'id de "' + self.toString() + '" est null'):
 	self.id <> null
 
+-- Il y a autant d'identifiant de ligne que le nombre de ligne déclaré
+inv Valid_col_id('Il n\'y a pas le bon nombre d\'identifiant dans la colonne d\'identifiant' + self.toString()):
+	self.ids ->
+	size() = self.nbLigne
+
 context Colonne
 -- Le nom des colonnes n'est pas null
 inv NonNull_nom_col('Le nom de "' + self.toString() + '" est null'):
@@ -42,6 +47,11 @@ inv Different_id_c:
 	self.SchemaTable.colonnes ->
 	collect(c|c.oclAsType(Colonne)) ->
 	forAll(c|self=c or self.id <> c.id)
+
+-- Il y a autant de données que le nombre de ligne déclaré
+inv Valid_col('Il n\'y a pas le bon nombre de donnée dans la colonne' + self.toString()):
+	self.donnees ->
+	size() = self.nbLigne
 
 context ContrainteColonne
 -- les contraintes sont valides
