@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="toHTML" name="fr.n7.schemaTable.toHTML">
-    <property name="ECLIPSE_HOME" value="../../../../../gls-v20202/eclipse-gls"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Installeur/gls-v2020/eclipse-gls"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="fr.n7.schemaTable.toHTML.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/fr.n7.schemaTable.toHTML/bin"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/lib/jrt-fs.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.19.0.v20200724-1004.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.16.0.v20200828-0759.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.2.100.v20200811-1344.jar"/>

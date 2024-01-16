@@ -53,6 +53,14 @@ inv Valid_col('Il n\'y a pas le bon nombre de donnée dans la colonne' + self.to
 	self.donnees ->
 	size() = self.nbLigne
 
+-- S'il y a référence, elle est bien respectée
+inv Valid_ref('La référence de la colonne n\'est pas respectée'):
+	if self.reference.oclIsUndefined() then
+		true
+	else
+		self.reference.nbLigneColRef = self.nbLigne
+	endif
+
 context ContrainteColonne
 -- les contraintes sont valides
 inv Valid_contrainte('Une contrainte n\'est pas valide'):
