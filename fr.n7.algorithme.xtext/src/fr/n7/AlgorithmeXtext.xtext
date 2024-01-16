@@ -1,0 +1,59 @@
+grammar fr.n7.AlgorithmeXtext with org.eclipse.xtext.common.Terminals
+
+generate algorithmeXtext "http://www.n7.fr/AlgorithmeXtext"
+
+Algorithme: 'Algorithme' nom=Nom
+	(algorithmeElement+=AlgorithmeElement)+
+;
+
+Nom:
+	ID('.'ID)*
+;
+
+AlgorithmeElement:
+	Ressource | Entree | Sortie
+;
+
+Ressource:
+	'Ressource :' nom=Chemin 'de type' type=TypeAlgo
+;
+
+Chemin:
+	('/'ID('.'ID)*)+
+;
+
+
+Sortie:
+	'Port sortie' nom=Nom ('associé à résultat' valeur=Resultat | 'associé au retour de la fonction')
+;
+
+Resultat:
+	ID
+;
+
+Entree:
+	'Port entrée' nom=Nom 'associé à argument' argument=Argument
+;
+
+Argument:
+	ID | INT
+;
+
+
+
+TypeAlgo:
+	Calcul | Script
+;
+
+Script:
+	 ID ', sous-programme' Programme
+;
+
+Programme:
+	ID
+;
+
+Calcul:
+	(ID)+
+;
+
