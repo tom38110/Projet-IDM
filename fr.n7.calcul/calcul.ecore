@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="calcul" nsURI="http://calcul" nsPrefix="calcul">
+  <eClassifiers xsi:type="ecore:EClass" name="Calcul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calculelement" upperBound="-1"
+        eType="#//CalculElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entree" lowerBound="1"
+        upperBound="-1" eType="#//Entree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sortie" lowerBound="1"
+        eType="#//Sortie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CalculElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portsortie" lowerBound="1"
+        eType="#//PortSortie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFixe" eSuperTypes="#//Entree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Entree">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortEntree" eSuperTypes="#//CalculElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="1"
+        eType="#//PortEntree" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//CalculElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" lowerBound="1"
+        eType="#//OperationEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="2"
+        upperBound="2" eType="#//PortEntree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portsortie" lowerBound="1"
+        eType="#//PortSortie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lien" eSuperTypes="#//CalculElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//PortSortie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cible" lowerBound="1" eType="#//PortEntree"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortSortie" eSuperTypes="#//CalculElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fonction" eSuperTypes="#//CalculElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fonction" lowerBound="1"
+        eType="#//FonctionEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portsortie" lowerBound="1"
+        eType="#//PortSortie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="1"
+        eType="#//PortEntree" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FonctionEnum">
+    <eLiterals name="SIN"/>
+    <eLiterals name="COS" value="1"/>
+    <eLiterals name="EXP" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationEnum">
+    <eLiterals name="ADD"/>
+    <eLiterals name="DIV" value="1"/>
+    <eLiterals name="SOUS" value="2"/>
+    <eLiterals name="MULT" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>
