@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithme:Algorithme xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithme="http://algorithme" xsi:schemaLocation="http://algorithme algorithme.ecore" nom="banque.finance.algo.moyenne">
+  <algorithmeElements xsi:type="algorithme:Ressource" chemin="/home/gdthunes/calc/moyenne.calc">
+    <ports xsi:type="algorithme:PortEntree" nom="moyenne.minimum">
+      <argument href="../fr.n7.calcul/calculMoyenne.xmi#//@entree.0"/>
+    </ports>
+    <ports xsi:type="algorithme:PortEntree" nom="moyenne.maximum">
+      <argument href="../fr.n7.calcul/calculMoyenne.xmi#//@entree.1"/>
+    </ports>
+    <ports xsi:type="algorithme:PortSortie" nom="moyenne.sortie">
+      <sortie href="../fr.n7.calcul/calculMoyenne.xmi#//@sortie"/>
+    </ports>
+    <calcul href="../fr.n7.calcul/calculMoyenne.xmi#/"/>
+  </algorithmeElements>
+</algorithme:Algorithme>

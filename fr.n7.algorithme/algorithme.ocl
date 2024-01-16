@@ -7,22 +7,28 @@ context Algorithme
 inv NonNull_nom('Le nom de "' + self.toString()+ '" est null'):
 	self.nom <> null
 
--- Les noms des algorithmes doivent être uniques
-inv Different_nom_algo:
-    Algorithme.allInstances()->forAll(a | self = a or self.nom <> a.nom)
-    
-context Catalogue
--- tous les noms des algorithmes du catalogue sont différents
-inv Tous_noms_algorithmes_differents:
-	self.algorithmes -> 
-	collect(a|a.oclAsType(Algorithme))	->
-	 forAll(a | self = a or self.nom <> a.nom )
-
 context Ressource
 -- les ressources à réaliser filepath ne doit pas être nulle
 inv RessourceNonNull: 
 	self.chemin <> null 
 
+-- il y a au moins un port d'entrée
+inv Portentree:
+	self.ports ->
+	exists(p|p.oclIsTypeOf(PortEntree))
+
+-- il y a au moins un port de sortie
+inv Portsortie:
+	self.ports ->
+	exists(p|p.oclIsTypeOf(PortSortie))
+
+-- Si une ressource est de type calcul, elle référence un calcul
+inv ValidRessource_calc:
+	if self.calcul.oclIsUndefined() then
+		self.type <> TypeRessource::CALCUL
+	else
+		true
+	endif
 
 context Port
 -- le nom du port ne doit pas être nulle

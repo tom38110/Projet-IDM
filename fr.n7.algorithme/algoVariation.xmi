@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithme:Algorithme xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithme="http://algorithme" xsi:schemaLocation="http://algorithme algorithme.ecore" nom="banque.finance.algo.variation">
+  <algorithmeElements xsi:type="algorithme:Ressource" chemin="/home/gdthunes/calc/finance.py" type="SCRIPT">
+    <ports xsi:type="algorithme:PortEntree" nom="variation.fin"/>
+    <ports xsi:type="algorithme:PortEntree" nom="variation.debut"/>
+    <ports xsi:type="algorithme:PortSortie" nom="variation.sortie"/>
+  </algorithmeElements>
+</algorithme:Algorithme>

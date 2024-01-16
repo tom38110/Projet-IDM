@@ -1,0 +1,18 @@
+import 'catalogue.ecore'
+
+package catalogue
+
+context Catalogue
+--
+-- example invariant with a custom error message to verify that
+-- the 'nom' property of all 'catalogue::Catalogue' instances is non-null
+--
+inv NonNull_nom('Le nom de "' + self.toString() + '" est null'):
+	nom <> null
+
+-- Les algorithmes ont tous un nom unique
+inv UniqAlgo_nom:
+	self.algorithmes ->
+	forAll(a1, a2 | a1 <> a2 implies a1.nom <> a2.nom)
+
+endpackage

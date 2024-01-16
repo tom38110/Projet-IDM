@@ -1,145 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schematable:SchemaTable
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:schematable="http://schematable"
-    xsi:schemaLocation="http://schematable schemaTable.ecore"
-    nom="Cours conglomérat Allemand">
-  <colonnes
-      id="banque.finance.raw.open"
-      nom="Open"
-      nbLigne="5">
-    <donnees
-        valeur="137.8"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="136.76"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="134.38"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="134.68"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="133.0"
-        idligne="//@colonneid/@ids.4"/>
-    <reference/>
+<schematable:SchemaTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:schematable="http://schematable" xsi:schemaLocation="http://schematable schemaTable.ecore" nom="Cours conglomérat Allemand">
+  <colonnes id="banque.finance.raw.open" nom="Open" nbLigne="5">
+    <donnees valeur="137.8" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="136.76" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="134.38" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="134.68" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="133.0" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonnes
-      id="banque.finance.raw.high"
-      nom="High"
-      nbLigne="5">
-    <donnees
-        valeur="138.5"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="136.82"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="136.92"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="135.44"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="134.38"
-        idligne="//@colonneid/@ids.4"/>
+  <colonnes id="banque.finance.raw.high" nom="High" nbLigne="5">
+    <donnees valeur="138.5" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="136.82" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="136.92" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="135.44" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="134.38" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonnes
-      id="banque.finance.raw.low"
-      nom="Low"
-      nbLigne="5">
-    <donnees
-        valeur="136.86"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="134.16"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="134.38"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="133.34"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="132.62"
-        idligne="//@colonneid/@ids.4"/>
+  <colonnes id="banque.finance.raw.low" nom="Low" nbLigne="5">
+    <donnees valeur="136.86" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="134.16" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="134.38" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="133.34" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="132.62" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonnes
-      id="banque.finance.raw.close"
-      nom="Close"
-      nbLigne="5">
-    <donnees
-        valeur="137.18"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="134.54"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="136.2"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="133.68"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="133.24"
-        idligne="//@colonneid/@ids.4"/>
+  <colonnes id="banque.finance.raw.close" nom="Close" nbLigne="5">
+    <donnees valeur="137.18" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="134.54" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="136.2" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="133.68" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="133.24" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonnes
-      id="banque.finance.raw.adjclose"
-      nom="Adj Close"
-      nbLigne="5">
-    <donnees
-        valeur="137.18"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="134.54"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="136.2"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="133.68"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="133.24"
-        idligne="//@colonneid/@ids.4"/>
+  <colonnes id="banque.finance.raw.adjclose" nom="Adj Close" nbLigne="5">
+    <donnees valeur="137.18" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="134.54" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="136.2" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="133.68" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="133.24" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonnes
-      id="banque.finance.raw.volume"
-      nom="Volume"
-      nbLigne="5">
-    <donnees
-        valeur="806069.0"
-        idligne="//@colonneid/@ids.0"/>
-    <donnees
-        valeur="908349.0"
-        idligne="//@colonneid/@ids.1"/>
-    <donnees
-        valeur="936370.0"
-        idligne="//@colonneid/@ids.2"/>
-    <donnees
-        valeur="1457225.0"
-        idligne="//@colonneid/@ids.3"/>
-    <donnees
-        valeur="1440069.0"
-        idligne="//@colonneid/@ids.4"/>
+  <colonnes id="banque.finance.raw.volume" nom="Volume" nbLigne="5">
+    <donnees valeur="806069.0" idligne="//@colonneid/@ids.0"/>
+    <donnees valeur="908349.0" idligne="//@colonneid/@ids.1"/>
+    <donnees valeur="936370.0" idligne="//@colonneid/@ids.2"/>
+    <donnees valeur="1457225.0" idligne="//@colonneid/@ids.3"/>
+    <donnees valeur="1440069.0" idligne="//@colonneid/@ids.4"/>
   </colonnes>
-  <colonneid
-      id="banque.finance.raw.date"
-      nom="Date"
-      nbLigne="5">
-    <ids valeur="2023-09-18"
-        donnees="//@colonnes.0/@donnees.0 //@colonnes.1/@donnees.0 //@colonnes.2/@donnees.0 //@colonnes.3/@donnees.0 //@colonnes.4/@donnees.0 //@colonnes.5/@donnees.0"/>
-    <ids valeur="2023-09-19"
-        donnees="//@colonnes.0/@donnees.1 //@colonnes.1/@donnees.1 //@colonnes.2/@donnees.1 //@colonnes.3/@donnees.1 //@colonnes.4/@donnees.1 //@colonnes.5/@donnees.1"/>
-    <ids valeur="2023-09-20"
-        donnees="//@colonnes.0/@donnees.2 //@colonnes.1/@donnees.2 //@colonnes.2/@donnees.2 //@colonnes.3/@donnees.2 //@colonnes.4/@donnees.2 //@colonnes.5/@donnees.2"/>
-    <ids valeur="2023-09-21"
-        donnees="//@colonnes.0/@donnees.3 //@colonnes.1/@donnees.3 //@colonnes.2/@donnees.3 //@colonnes.3/@donnees.3 //@colonnes.4/@donnees.3 //@colonnes.5/@donnees.3"/>
-    <ids valeur="2023-09-22"
-        donnees="//@colonnes.0/@donnees.4 //@colonnes.1/@donnees.4 //@colonnes.2/@donnees.4 //@colonnes.3/@donnees.4 //@colonnes.4/@donnees.4 //@colonnes.5/@donnees.4"/>
+  <colonneid id="banque.finance.raw.date" nom="Date" nbLigne="5">
+    <ids valeur="2023-09-18" donnees="//@colonnes.0/@donnees.0 //@colonnes.1/@donnees.0 //@colonnes.2/@donnees.0 //@colonnes.3/@donnees.0 //@colonnes.4/@donnees.0 //@colonnes.5/@donnees.0"/>
+    <ids valeur="2023-09-19" donnees="//@colonnes.0/@donnees.1 //@colonnes.1/@donnees.1 //@colonnes.2/@donnees.1 //@colonnes.3/@donnees.1 //@colonnes.4/@donnees.1 //@colonnes.5/@donnees.1"/>
+    <ids valeur="2023-09-20" donnees="//@colonnes.0/@donnees.2 //@colonnes.1/@donnees.2 //@colonnes.2/@donnees.2 //@colonnes.3/@donnees.2 //@colonnes.4/@donnees.2 //@colonnes.5/@donnees.2"/>
+    <ids valeur="2023-09-21" donnees="//@colonnes.0/@donnees.3 //@colonnes.1/@donnees.3 //@colonnes.2/@donnees.3 //@colonnes.3/@donnees.3 //@colonnes.4/@donnees.3 //@colonnes.5/@donnees.3"/>
+    <ids valeur="2023-09-22" donnees="//@colonnes.0/@donnees.4 //@colonnes.1/@donnees.4 //@colonnes.2/@donnees.4 //@colonnes.3/@donnees.4 //@colonnes.4/@donnees.4 //@colonnes.5/@donnees.4"/>
   </colonneid>
 </schematable:SchemaTable>

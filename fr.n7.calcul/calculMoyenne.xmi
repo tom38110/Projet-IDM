@@ -1,66 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<calcul:Calcul
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:calcul="http://calcul"
-    xsi:schemaLocation="http://calcul calcul.ecore">
+<calcul:Calcul xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:calcul="http://calcul" xsi:schemaLocation="http://calcul calcul.ecore">
   <sortie nom="resultat">
-    <portentree
-        nom="p9"/>
+    <portentree nom="p9"/>
   </sortie>
-  <entree xsi:type="calcul:Argument"
-      nom="minimum">
-    <portsortie
-        nom="p0"/>
+  <entree xsi:type="calcul:Argument" nom="minimum">
+    <portsortie nom="p0"/>
   </entree>
-  <entree xsi:type="calcul:Argument"
-      nom="maximum">
-    <portsortie
-        nom="p1"/>
+  <entree xsi:type="calcul:Argument" nom="maximum">
+    <portsortie nom="p1"/>
   </entree>
-  <entree xsi:type="calcul:PortFixe"
-      valeur="2.0">
-    <portsortie
-        nom="p8"/>
+  <entree xsi:type="calcul:PortFixe" valeur="2.0">
+    <portsortie nom="p8"/>
   </entree>
-  <calculelement
-      xsi:type="calcul:Operation">
-    <portentree
-        nom="p2"/>
-    <portentree
-        nom="p3"/>
-    <portsortie
-        nom="p4"/>
+  <calculelement xsi:type="calcul:Operation">
+    <portentree nom="p2"/>
+    <portentree nom="p3"/>
+    <portsortie nom="p4"/>
   </calculelement>
-  <calculelement
-      xsi:type="calcul:Operation"
-      operation="DIV">
-    <portentree
-        nom="p5"/>
-    <portentree
-        nom="p6"/>
-    <portsortie
-        nom="p7"/>
+  <calculelement xsi:type="calcul:Operation" operation="DIV">
+    <portentree nom="p5"/>
+    <portentree nom="p6"/>
+    <portsortie nom="p7"/>
   </calculelement>
-  <calculelement
-      xsi:type="calcul:Lien"
-      cible="//@calculelement.0/@portentree.0"
-      source="//@entree.0/@portsortie"/>
-  <calculelement
-      xsi:type="calcul:Lien"
-      cible="//@calculelement.0/@portentree.1"
-      source="//@entree.1/@portsortie"/>
-  <calculelement
-      xsi:type="calcul:Lien"
-      cible="//@calculelement.1/@portentree.0"
-      source="//@calculelement.0/@portsortie"/>
-  <calculelement
-      xsi:type="calcul:Lien"
-      cible="//@calculelement.1/@portentree.1"
-      source="//@entree.2/@portsortie"/>
-  <calculelement
-      xsi:type="calcul:Lien"
-      cible="//@sortie/@portentree"
-      source="//@calculelement.1/@portsortie"/>
+  <calculelement xsi:type="calcul:Lien" cible="//@calculelement.0/@portentree.0" source="//@entree.0/@portsortie"/>
+  <calculelement xsi:type="calcul:Lien" cible="//@calculelement.0/@portentree.1" source="//@entree.1/@portsortie"/>
+  <calculelement xsi:type="calcul:Lien" cible="//@calculelement.1/@portentree.0" source="//@calculelement.0/@portsortie"/>
+  <calculelement xsi:type="calcul:Lien" cible="//@calculelement.1/@portentree.1" source="//@entree.2/@portsortie"/>
+  <calculelement xsi:type="calcul:Lien" cible="//@sortie/@portentree" source="//@calculelement.1/@portsortie"/>
 </calcul:Calcul>

@@ -48,10 +48,15 @@ inv Different_id_c:
 	collect(c|c.oclAsType(Colonne)) ->
 	forAll(c|self=c or self.id <> c.id)
 
--- Il y a autant de données que le nombre de ligne déclaré
+-- Il y a autant de données que le nombre de ligne déclaré si la colonne ne provient pas
+-- d'une autre table ou ne dérive pas d'un algorithme
 inv Valid_col('Il n\'y a pas le bon nombre de donnée dans la colonne' + self.toString()):
-	self.donnees ->
-	size() = self.nbLigne
+	if self.reference.oclIsUndefined() and self.deriveDe.oclIsUndefined() then
+		self.donnees ->
+		size() = self.nbLigne
+	else
+		true
+	endif
 
 -- S'il y a référence, elle est bien respectée
 inv Valid_ref('La référence de la colonne n\'est pas respectée'):

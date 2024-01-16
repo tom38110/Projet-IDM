@@ -8,7 +8,81 @@
     nom="Analyse">
   <colonnes
       id="banque.finance.ouverture"
-      nom="Ouverture">
-    <reference/>
+      nom="Ouverture"
+      nbLigne="5">
+    <reference
+        idColRef="banque.finance.raw.open"
+        nbLigneColRef="5">
+      <tableEtrangere
+          href="exempleProjet.xmi#/"/>
+    </reference>
   </colonnes>
+  <colonnes
+      id="banque.finance.min"
+      nom="Min"
+      nbLigne="5">
+    <reference
+        idColRef="banque.finance.raw.low"
+        nbLigneColRef="5">
+      <tableEtrangere
+          href="exempleProjet.xmi#/"/>
+    </reference>
+  </colonnes>
+  <colonnes
+      id="banque.finance.max"
+      nom="Max"
+      nbLigne="5">
+    <reference
+        idColRef="banque.finance.raw.high"
+        nbLigneColRef="5">
+      <tableEtrangere
+          href="exempleProjet.xmi#/"/>
+    </reference>
+  </colonnes>
+  <colonnes
+      id="banque.finance.fermeture"
+      nom="Fermeture"
+      nbLigne="5">
+    <reference
+        idColRef="banque.finance.raw.close"
+        nbLigneColRef="5">
+      <tableEtrangere
+          href="exempleProjet.xmi#/"/>
+    </reference>
+  </colonnes>
+  <colonnes
+      id="banque.finance.volume"
+      nom="Volume"
+      nbLigne="5">
+    <reference
+        idColRef="banque.finance.raw.volume"
+        nbLigneColRef="5">
+      <tableEtrangere
+          href="exempleProjet.xmi#/"/>
+    </reference>
+  </colonnes>
+  <colonnes
+      id="banque.finance.moyenne"
+      nom="Moyenne"
+      nbLigne="5">
+    <deriveDe
+        href="../fr.n7.algorithme/algoMoyenne.xmi#/"/>
+  </colonnes>
+  <colonnes
+      id="banque.finance.variation"
+      nom="Variation"
+      nbLigne="5">
+    <deriveDe
+        href="../fr.n7.algorithme/algoVariation.xmi#/"/>
+  </colonnes>
+  <colonneid
+      id="banque.finance.date"
+      nom="Date"
+      nbLigne="5">
+    <ids valeur="2023-09-18"/>
+    <ids valeur="2023-09-19"/>
+    <ids valeur="2023-09-20"/>
+    <ids valeur="2023-09-21"/>
+    <ids valeur="2023-09-22"/>
+  </colonneid>
 </schematable:SchemaTable>
