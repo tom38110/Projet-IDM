@@ -5,7 +5,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sortie" lowerBound="1"
         eType="#//Sortie" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entree" lowerBound="1"
-        eType="#//Entree" containment="true"/>
+        upperBound="-1" eType="#//Entree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calculelement" upperBound="-1"
+        eType="#//CalculElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CalculElement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entree" abstract="true">
@@ -22,7 +24,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="1"
         eType="#//PortEntree" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortSortie" eSuperTypes="#//CalculElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortSortie" eSuperTypes="#//CalculElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lien" eSuperTypes="#//CalculElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cible" lowerBound="1" eType="#//PortEntree"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
@@ -31,6 +35,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Sortie">
     <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="1"
         eType="#//PortEntree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//CalculElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="portentree" lowerBound="2"
@@ -44,11 +49,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//Entree">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortEntree" eSuperTypes="#//CalculElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortEntree" eSuperTypes="#//CalculElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OperationType">
     <eLiterals name="ADD"/>
     <eLiterals name="SOUS" value="1"/>
-    <eLiterals name="DIIV" value="2"/>
+    <eLiterals name="DIV" value="2"/>
     <eLiterals name="MULT" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FonctionType">

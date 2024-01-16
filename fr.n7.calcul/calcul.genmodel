@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.n7.calcul/src" modelPluginID="fr.n7.calcul"
+    modelName="Calcul" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>calcul.ecore</foreignModel>
+  <genPackages prefix="Calcul" disposableProviderFactory="true" ecorePackage="calcul.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="calcul.ecore#//OperationType">
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//OperationType/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//OperationType/SOUS"/>
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//OperationType/DIIV"/>
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//OperationType/MULT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="calcul.ecore#//FonctionType">
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//FonctionType/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//FonctionType/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="calcul.ecore#//FonctionType/EXP"/>
+    </genEnums>
+    <genClasses ecoreClass="calcul.ecore#//Calcul">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Calcul/sortie"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Calcul/entree"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="calcul.ecore#//CalculElement"/>
+    <genClasses image="false" ecoreClass="calcul.ecore#//Entree">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute calcul.ecore#//Entree/valeur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Entree/portsortie"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//Fonction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute calcul.ecore#//Fonction/fonction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Fonction/portsortie"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Fonction/portentree"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//PortSortie"/>
+    <genClasses ecoreClass="calcul.ecore#//Lien">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference calcul.ecore#//Lien/cible"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference calcul.ecore#//Lien/source"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//Sortie">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Sortie/portentree"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//Operation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Operation/portentree"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference calcul.ecore#//Operation/portsortie"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute calcul.ecore#//Operation/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//PortFixe"/>
+    <genClasses ecoreClass="calcul.ecore#//Argument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute calcul.ecore#//Argument/nom"/>
+    </genClasses>
+    <genClasses ecoreClass="calcul.ecore#//PortEntree"/>
+  </genPackages>
+</genmodel:GenModel>
