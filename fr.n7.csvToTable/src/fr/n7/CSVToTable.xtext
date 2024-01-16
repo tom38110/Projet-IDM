@@ -1,0 +1,41 @@
+grammar fr.n7.CSVToTable with org.eclipse.xtext.common.Terminals
+
+generate cSVToTable "http://www.n7.fr/CSVToTable"
+
+Tableau:
+	LigneNom 
+	lines+=LigneValeur
+;
+
+LigneNom:
+	ColonneID (',' colonnes+=ID)*
+;
+
+ColonneID:
+   nom=ID
+;
+
+LigneValeur:
+   valeurs+=Donnee (',' valeurs+=Donnee)*
+;
+
+Donnee:
+   Valeur | Date
+;
+
+Date:
+   (ID '-' ID) | (ID '/' ID)
+;
+
+Valeur:
+   ID | Flottant
+;
+
+Flottant:
+   ID ('.' ID)+
+;
+
+
+
+
+
