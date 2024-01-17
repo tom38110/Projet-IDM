@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="toCSV" name="n7.schemaTable.toCSV">
+    <property name="ECLIPSE_HOME" value="../../../../../gls-v2020/eclipse-gls"/>
+    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+
+    <!-- The classpath with only the dependencies used by the project -->
+    <path id="n7.schemaTable.toCSV.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/n7.schemaTable.toCSV/bin"/>
+    </path>
+
+    <path id="n7.schemaTable.toCSV.classpath">
+        <path refid="n7.schemaTable.toCSV.libraryclasspath"/>
+    </path>
+
+    <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
+    <path id="n7.schemaTable.toCSV.libraryclasspath.alljars">
+        <pathelement location="../n7.schemaTable.toCSV/bin"/>
+        <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
+    </path>
+
+    <path id="n7.schemaTable.toCSV.classpath.alljars">
+        <path refid="n7.schemaTable.toCSV.libraryclasspath.alljars"/>
+    </path>
+
+    <!-- The default task with the jars used by this project -->
+    <target name="toCSV">
+        <java classname="n7.schemaTable.toCSV.main.ToCSV" classpathref="n7.schemaTable.toCSV.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+
+    <!--
+        In case of problem you can also try with all the jar available in your Eclipse
+        Keep in mind that having two versions of the same jar can create problems
+    -->
+    <target name="toCSV.alljars">
+        <java classname="n7.schemaTable.toCSV.main.ToCSV" classpathref="n7.schemaTable.toCSV.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+</project>

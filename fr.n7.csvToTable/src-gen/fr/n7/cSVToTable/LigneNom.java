@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.cSVToTable.LigneNom#getLines <em>Lines</em>}</li>
+ *   <li>{@link fr.n7.cSVToTable.LigneNom#getColonnes <em>Colonnes</em>}</li>
  * </ul>
  *
  * @see fr.n7.cSVToTable.CSVToTablePackage#getLigneNom()
@@ -34,5 +35,17 @@ public interface LigneNom extends Tableau
    * @generated
    */
   EList<LigneValeur> getLines();
+
+  /**
+   * Returns the value of the '<em><b>Colonnes</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Colonnes</em>' attribute list.
+   * @see fr.n7.cSVToTable.CSVToTablePackage#getLigneNom_Colonnes()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getColonnes();
 
 } // LigneNom

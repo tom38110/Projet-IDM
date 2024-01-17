@@ -96,13 +96,22 @@ public interface CSVToTablePackage extends EPackage
   int LIGNE_NOM__LINES = TABLEAU_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Colonnes</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIGNE_NOM__COLONNES = TABLEAU_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Ligne Nom</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIGNE_NOM_FEATURE_COUNT = TABLEAU_FEATURE_COUNT + 1;
+  int LIGNE_NOM_FEATURE_COUNT = TABLEAU_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link fr.n7.cSVToTable.impl.ColonneIDImpl <em>Colonne ID</em>}' class.
@@ -115,31 +124,13 @@ public interface CSVToTablePackage extends EPackage
   int COLONNE_ID = 2;
 
   /**
-   * The feature id for the '<em><b>Lines</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLONNE_ID__LINES = LIGNE_NOM__LINES;
-
-  /**
-   * The feature id for the '<em><b>Colonnes</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COLONNE_ID__COLONNES = LIGNE_NOM_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Nom</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COLONNE_ID__NOM = LIGNE_NOM_FEATURE_COUNT + 1;
+  int COLONNE_ID__NOM = 0;
 
   /**
    * The number of structural features of the '<em>Colonne ID</em>' class.
@@ -148,7 +139,7 @@ public interface CSVToTablePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COLONNE_ID_FEATURE_COUNT = LIGNE_NOM_FEATURE_COUNT + 2;
+  int COLONNE_ID_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link fr.n7.cSVToTable.impl.LigneValeurImpl <em>Ligne Valeur</em>}' class.
@@ -211,6 +202,17 @@ public interface CSVToTablePackage extends EPackage
   EReference getLigneNom_Lines();
 
   /**
+   * Returns the meta object for the attribute list '{@link fr.n7.cSVToTable.LigneNom#getColonnes <em>Colonnes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Colonnes</em>'.
+   * @see fr.n7.cSVToTable.LigneNom#getColonnes()
+   * @see #getLigneNom()
+   * @generated
+   */
+  EAttribute getLigneNom_Colonnes();
+
+  /**
    * Returns the meta object for class '{@link fr.n7.cSVToTable.ColonneID <em>Colonne ID</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -219,17 +221,6 @@ public interface CSVToTablePackage extends EPackage
    * @generated
    */
   EClass getColonneID();
-
-  /**
-   * Returns the meta object for the attribute list '{@link fr.n7.cSVToTable.ColonneID#getColonnes <em>Colonnes</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Colonnes</em>'.
-   * @see fr.n7.cSVToTable.ColonneID#getColonnes()
-   * @see #getColonneID()
-   * @generated
-   */
-  EAttribute getColonneID_Colonnes();
 
   /**
    * Returns the meta object for the attribute '{@link fr.n7.cSVToTable.ColonneID#getNom <em>Nom</em>}'.
@@ -315,6 +306,14 @@ public interface CSVToTablePackage extends EPackage
     EReference LIGNE_NOM__LINES = eINSTANCE.getLigneNom_Lines();
 
     /**
+     * The meta object literal for the '<em><b>Colonnes</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIGNE_NOM__COLONNES = eINSTANCE.getLigneNom_Colonnes();
+
+    /**
      * The meta object literal for the '{@link fr.n7.cSVToTable.impl.ColonneIDImpl <em>Colonne ID</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -323,14 +322,6 @@ public interface CSVToTablePackage extends EPackage
      * @generated
      */
     EClass COLONNE_ID = eINSTANCE.getColonneID();
-
-    /**
-     * The meta object literal for the '<em><b>Colonnes</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COLONNE_ID__COLONNES = eINSTANCE.getColonneID_Colonnes();
 
     /**
      * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.

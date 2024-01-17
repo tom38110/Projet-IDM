@@ -49,21 +49,25 @@ public class CSVToTableGrammarAccess extends AbstractElementFinder.AbstractGramm
 	public class LigneNomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.n7.CSVToTable.LigneNom");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cColonneIDParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cColonnesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cColonnesIDTerminalRuleCall_0_0 = (RuleCall)cColonnesAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cColonnesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cColonnesIDTerminalRuleCall_1_1_0 = (RuleCall)cColonnesAssignment_1_1.eContents().get(0);
 		
 		//LigneNom:
-		//	ColonneID (',' colonnes+=ID)*;
+		//	colonnes+=ID (',' colonnes+=ID)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ColonneID (',' colonnes+=ID)*
+		//colonnes+=ID (',' colonnes+=ID)*
 		public Group getGroup() { return cGroup; }
 		
-		//ColonneID
-		public RuleCall getColonneIDParserRuleCall_0() { return cColonneIDParserRuleCall_0; }
+		//colonnes+=ID
+		public Assignment getColonnesAssignment_0() { return cColonnesAssignment_0; }
+		
+		//ID
+		public RuleCall getColonnesIDTerminalRuleCall_0_0() { return cColonnesIDTerminalRuleCall_0_0; }
 		
 		//(',' colonnes+=ID)*
 		public Group getGroup_1() { return cGroup_1; }
@@ -304,7 +308,7 @@ public class CSVToTableGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//LigneNom:
-	//	ColonneID (',' colonnes+=ID)*;
+	//	colonnes+=ID (',' colonnes+=ID)*;
 	public LigneNomElements getLigneNomAccess() {
 		return pLigneNom;
 	}

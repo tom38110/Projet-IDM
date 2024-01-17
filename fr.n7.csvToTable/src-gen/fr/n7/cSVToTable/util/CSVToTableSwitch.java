@@ -92,8 +92,6 @@ public class CSVToTableSwitch<T> extends Switch<T>
       {
         ColonneID colonneID = (ColonneID)theEObject;
         T result = caseColonneID(colonneID);
-        if (result == null) result = caseLigneNom(colonneID);
-        if (result == null) result = caseTableau(colonneID);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

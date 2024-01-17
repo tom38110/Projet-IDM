@@ -6,17 +6,12 @@ package fr.n7.cSVToTable.impl;
 import fr.n7.cSVToTable.CSVToTablePackage;
 import fr.n7.cSVToTable.ColonneID;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,24 +21,13 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.n7.cSVToTable.impl.ColonneIDImpl#getColonnes <em>Colonnes</em>}</li>
  *   <li>{@link fr.n7.cSVToTable.impl.ColonneIDImpl#getNom <em>Nom</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ColonneIDImpl extends LigneNomImpl implements ColonneID
+public class ColonneIDImpl extends MinimalEObjectImpl.Container implements ColonneID
 {
-  /**
-   * The cached value of the '{@link #getColonnes() <em>Colonnes</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getColonnes()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> colonnes;
-
   /**
    * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -91,21 +75,6 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
    * @generated
    */
   @Override
-  public EList<String> getColonnes()
-  {
-    if (colonnes == null)
-    {
-      colonnes = new EDataTypeEList<String>(String.class, this, CSVToTablePackage.COLONNE_ID__COLONNES);
-    }
-    return colonnes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getNom()
   {
     return nom;
@@ -135,8 +104,6 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
   {
     switch (featureID)
     {
-      case CSVToTablePackage.COLONNE_ID__COLONNES:
-        return getColonnes();
       case CSVToTablePackage.COLONNE_ID__NOM:
         return getNom();
     }
@@ -148,16 +115,11 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CSVToTablePackage.COLONNE_ID__COLONNES:
-        getColonnes().clear();
-        getColonnes().addAll((Collection<? extends String>)newValue);
-        return;
       case CSVToTablePackage.COLONNE_ID__NOM:
         setNom((String)newValue);
         return;
@@ -175,9 +137,6 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
   {
     switch (featureID)
     {
-      case CSVToTablePackage.COLONNE_ID__COLONNES:
-        getColonnes().clear();
-        return;
       case CSVToTablePackage.COLONNE_ID__NOM:
         setNom(NOM_EDEFAULT);
         return;
@@ -195,8 +154,6 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
   {
     switch (featureID)
     {
-      case CSVToTablePackage.COLONNE_ID__COLONNES:
-        return colonnes != null && !colonnes.isEmpty();
       case CSVToTablePackage.COLONNE_ID__NOM:
         return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
     }
@@ -214,9 +171,7 @@ public class ColonneIDImpl extends LigneNomImpl implements ColonneID
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (colonnes: ");
-    result.append(colonnes);
-    result.append(", nom: ");
+    result.append(" (nom: ");
     result.append(nom);
     result.append(')');
     return result.toString();

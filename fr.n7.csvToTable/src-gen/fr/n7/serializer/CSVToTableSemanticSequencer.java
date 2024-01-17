@@ -6,6 +6,7 @@ package fr.n7.serializer;
 import com.google.inject.Inject;
 import fr.n7.cSVToTable.CSVToTablePackage;
 import fr.n7.cSVToTable.ColonneID;
+import fr.n7.cSVToTable.LigneNom;
 import fr.n7.cSVToTable.LigneValeur;
 import fr.n7.services.CSVToTableGrammarAccess;
 import java.util.Set;
@@ -34,16 +35,15 @@ public class CSVToTableSemanticSequencer extends AbstractDelegatingSemanticSeque
 		if (epackage == CSVToTablePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case CSVToTablePackage.COLONNE_ID:
-				if (rule == grammarAccess.getColonneIDRule()) {
-					sequence_ColonneID(context, (ColonneID) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getLigneNomRule()) {
-					sequence_ColonneID_LigneNom(context, (ColonneID) semanticObject); 
+				sequence_ColonneID(context, (ColonneID) semanticObject); 
+				return; 
+			case CSVToTablePackage.LIGNE_NOM:
+				if (rule == grammarAccess.getLigneNomRule()) {
+					sequence_LigneNom(context, (LigneNom) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getTableauRule()) {
-					sequence_ColonneID_LigneNom_Tableau(context, (ColonneID) semanticObject); 
+					sequence_LigneNom_Tableau(context, (LigneNom) semanticObject); 
 					return; 
 				}
 				else break;
@@ -75,24 +75,24 @@ public class CSVToTableSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Contexts:
-	 *     LigneNom returns ColonneID
+	 *     LigneNom returns LigneNom
 	 *
 	 * Constraint:
-	 *     (nom=ID colonnes+=ID*)
+	 *     (colonnes+=ID colonnes+=ID*)
 	 */
-	protected void sequence_ColonneID_LigneNom(ISerializationContext context, ColonneID semanticObject) {
+	protected void sequence_LigneNom(ISerializationContext context, LigneNom semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Tableau returns ColonneID
+	 *     Tableau returns LigneNom
 	 *
 	 * Constraint:
-	 *     (nom=ID colonnes+=ID* lines+=LigneValeur)
+	 *     (colonnes+=ID colonnes+=ID* lines+=LigneValeur)
 	 */
-	protected void sequence_ColonneID_LigneNom_Tableau(ISerializationContext context, ColonneID semanticObject) {
+	protected void sequence_LigneNom_Tableau(ISerializationContext context, LigneNom semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

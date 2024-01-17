@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module toCSV('http://schematable')]
+
+
+[template public tableToCSV(aSchemaTable : SchemaTable)]
+[comment @main/]
+[file (aSchemaTable.nom + '.txt', false, 'UTF-8')]
+[let colonneid : OrderedSet(ColonneID) = aSchemaTable.getColonnesID()][for (cid : ColonneID | colonneid)][cid.nom/][/for][/let][let colonne : OrderedSet(Colonne) = aSchemaTable.getColonnes()][for (c : Colonne | colonne)],[c.nom/][/for][/let]
+[let ids : OrderedSet(IDLigne) = aSchemaTable.getIDLigne()][for (id : IDLigne | ids)]
+[id.valeur/][for (d : Donnee | id.donnees)],[d.valeur/][/for][/for][/let]
+
+[/file]
+[/template]
+
+[query public getColonnes(s: SchemaTable) : OrderedSet(Colonne) = 
+	s.colonnes -> select( c | c.oclIsTypeOf(Colonne) )
+		->collect( c | c.oclAsType(Colonne) )
+		->asOrderedSet()
+/]
+
+[query public getColonnesID(s: SchemaTable) : OrderedSet(ColonneID) = 
+	s.colonneid -> select( c | c.oclIsTypeOf(ColonneID) )
+		->collect( c | c.oclAsType(ColonneID) )
+		->asOrderedSet()
+/]
+
+[query public getDonnes(s: SchemaTable) : OrderedSet(Donnee) = 
+	s.colonnes.donnees -> select( d | d.oclIsTypeOf(Donnee) )
+		->collect( d | d.oclAsType(Donnee) )
+		->asOrderedSet()
+/]
+
+[query public getIDLigne(s: SchemaTable) : OrderedSet(IDLigne) = 
+	s.colonneid.ids -> select( d | d.oclIsTypeOf(IDLigne) )
+		->collect( d | d.oclAsType(IDLigne) )
+		->asOrderedSet()
+/]
+
+[query public getDonnesID(s: SchemaTable) : OrderedSet(Donnee) = 
+	s.colonneid.ids.donnees
+ -> select( d | d.oclIsTypeOf(Donnee) )
+		->collect( d | d.oclAsType(Donnee) )
+		->asOrderedSet()
+/]
+
+
+
+

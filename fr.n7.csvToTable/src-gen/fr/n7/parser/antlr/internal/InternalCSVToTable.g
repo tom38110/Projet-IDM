@@ -122,14 +122,24 @@ ruleLigneNom returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getLigneNomAccess().getColonneIDParserRuleCall_0());
-		}
-		this_ColonneID_0=ruleColonneID
-		{
-			$current = $this_ColonneID_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				lv_colonnes_0_0=RULE_ID
+				{
+					newLeafNode(lv_colonnes_0_0, grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLigneNomRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"colonnes",
+						lv_colonnes_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
 		(
 			otherlv_1=','
 			{
@@ -154,41 +164,6 @@ ruleLigneNom returns [EObject current=null]
 				)
 			)
 		)*
-	)
-;
-
-// Entry rule entryRuleColonneID
-entryRuleColonneID returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColonneIDRule()); }
-	iv_ruleColonneID=ruleColonneID
-	{ $current=$iv_ruleColonneID.current; }
-	EOF;
-
-// Rule ColonneID
-ruleColonneID returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_nom_0_0=RULE_ID
-			{
-				newLeafNode(lv_nom_0_0, grammarAccess.getColonneIDAccess().getNomIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getColonneIDRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"nom",
-					lv_nom_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
-		)
 	)
 ;
 

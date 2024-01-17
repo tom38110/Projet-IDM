@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.n7.cSVToTable.impl.LigneNomImpl#getLines <em>Lines</em>}</li>
+ *   <li>{@link fr.n7.cSVToTable.impl.LigneNomImpl#getColonnes <em>Colonnes</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +45,16 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
    * @ordered
    */
   protected EList<LigneValeur> lines;
+
+  /**
+   * The cached value of the '{@link #getColonnes() <em>Colonnes</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getColonnes()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> colonnes;
 
   /**
    * <!-- begin-user-doc -->
@@ -86,6 +98,21 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
    * @generated
    */
   @Override
+  public EList<String> getColonnes()
+  {
+    if (colonnes == null)
+    {
+      colonnes = new EDataTypeEList<String>(String.class, this, CSVToTablePackage.LIGNE_NOM__COLONNES);
+    }
+    return colonnes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -108,6 +135,8 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
     {
       case CSVToTablePackage.LIGNE_NOM__LINES:
         return getLines();
+      case CSVToTablePackage.LIGNE_NOM__COLONNES:
+        return getColonnes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,6 +156,10 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
         getLines().clear();
         getLines().addAll((Collection<? extends LigneValeur>)newValue);
         return;
+      case CSVToTablePackage.LIGNE_NOM__COLONNES:
+        getColonnes().clear();
+        getColonnes().addAll((Collection<? extends String>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -144,6 +177,9 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
       case CSVToTablePackage.LIGNE_NOM__LINES:
         getLines().clear();
         return;
+      case CSVToTablePackage.LIGNE_NOM__COLONNES:
+        getColonnes().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -160,8 +196,27 @@ public class LigneNomImpl extends TableauImpl implements LigneNom
     {
       case CSVToTablePackage.LIGNE_NOM__LINES:
         return lines != null && !lines.isEmpty();
+      case CSVToTablePackage.LIGNE_NOM__COLONNES:
+        return colonnes != null && !colonnes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (colonnes: ");
+    result.append(colonnes);
+    result.append(')');
+    return result.toString();
   }
 
 } //LigneNomImpl

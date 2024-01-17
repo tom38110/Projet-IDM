@@ -155,6 +155,17 @@ public class CSVToTablePackageImpl extends EPackageImpl implements CSVToTablePac
    * @generated
    */
   @Override
+  public EAttribute getLigneNom_Colonnes()
+  {
+    return (EAttribute)ligneNomEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getColonneID()
   {
     return colonneIDEClass;
@@ -166,20 +177,9 @@ public class CSVToTablePackageImpl extends EPackageImpl implements CSVToTablePac
    * @generated
    */
   @Override
-  public EAttribute getColonneID_Colonnes()
-  {
-    return (EAttribute)colonneIDEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EAttribute getColonneID_Nom()
   {
-    return (EAttribute)colonneIDEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)colonneIDEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -239,9 +239,9 @@ public class CSVToTablePackageImpl extends EPackageImpl implements CSVToTablePac
 
     ligneNomEClass = createEClass(LIGNE_NOM);
     createEReference(ligneNomEClass, LIGNE_NOM__LINES);
+    createEAttribute(ligneNomEClass, LIGNE_NOM__COLONNES);
 
     colonneIDEClass = createEClass(COLONNE_ID);
-    createEAttribute(colonneIDEClass, COLONNE_ID__COLONNES);
     createEAttribute(colonneIDEClass, COLONNE_ID__NOM);
 
     ligneValeurEClass = createEClass(LIGNE_VALEUR);
@@ -278,16 +278,15 @@ public class CSVToTablePackageImpl extends EPackageImpl implements CSVToTablePac
 
     // Add supertypes to classes
     ligneNomEClass.getESuperTypes().add(this.getTableau());
-    colonneIDEClass.getESuperTypes().add(this.getLigneNom());
 
     // Initialize classes and features; add operations and parameters
     initEClass(tableauEClass, Tableau.class, "Tableau", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(ligneNomEClass, LigneNom.class, "LigneNom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLigneNom_Lines(), this.getLigneValeur(), null, "lines", null, 0, -1, LigneNom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLigneNom_Colonnes(), ecorePackage.getEString(), "colonnes", null, 0, -1, LigneNom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colonneIDEClass, ColonneID.class, "ColonneID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getColonneID_Colonnes(), ecorePackage.getEString(), "colonnes", null, 0, -1, ColonneID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getColonneID_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, ColonneID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ligneValeurEClass, LigneValeur.class, "LigneValeur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

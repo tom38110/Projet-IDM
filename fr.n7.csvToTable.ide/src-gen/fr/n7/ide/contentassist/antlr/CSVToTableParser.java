@@ -44,6 +44,7 @@ public class CSVToTableParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFlottantAccess().getGroup(), "rule__Flottant__Group__0");
 			builder.put(grammarAccess.getFlottantAccess().getGroup_1(), "rule__Flottant__Group_1__0");
 			builder.put(grammarAccess.getTableauAccess().getLinesAssignment_1(), "rule__Tableau__LinesAssignment_1");
+			builder.put(grammarAccess.getLigneNomAccess().getColonnesAssignment_0(), "rule__LigneNom__ColonnesAssignment_0");
 			builder.put(grammarAccess.getLigneNomAccess().getColonnesAssignment_1_1(), "rule__LigneNom__ColonnesAssignment_1_1");
 			builder.put(grammarAccess.getColonneIDAccess().getNomAssignment(), "rule__ColonneID__NomAssignment");
 			builder.put(grammarAccess.getLigneValeurAccess().getValeursAssignment_0(), "rule__LigneValeur__ValeursAssignment_0");

@@ -99,31 +99,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleColonneID
-entryRuleColonneID
-:
-{ before(grammarAccess.getColonneIDRule()); }
-	 ruleColonneID
-{ after(grammarAccess.getColonneIDRule()); } 
-	 EOF 
-;
-
-// Rule ColonneID
-ruleColonneID 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getColonneIDAccess().getNomAssignment()); }
-		(rule__ColonneID__NomAssignment)
-		{ after(grammarAccess.getColonneIDAccess().getNomAssignment()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleLigneValeur
 entryRuleLigneValeur
 :
@@ -384,9 +359,9 @@ rule__LigneNom__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLigneNomAccess().getColonneIDParserRuleCall_0()); }
-	ruleColonneID
-	{ after(grammarAccess.getLigneNomAccess().getColonneIDParserRuleCall_0()); }
+	{ before(grammarAccess.getLigneNomAccess().getColonnesAssignment_0()); }
+	(rule__LigneNom__ColonnesAssignment_0)
+	{ after(grammarAccess.getLigneNomAccess().getColonnesAssignment_0()); }
 )
 ;
 finally {
@@ -874,6 +849,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__LigneNom__ColonnesAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_0_0()); }
+		RULE_ID
+		{ after(grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__LigneNom__ColonnesAssignment_1_1
 	@init {
 		int stackSize = keepStackSize();
@@ -883,21 +873,6 @@ rule__LigneNom__ColonnesAssignment_1_1
 		{ before(grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_1_1_0()); }
 		RULE_ID
 		{ after(grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_1_1_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ColonneID__NomAssignment
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getColonneIDAccess().getNomIDTerminalRuleCall_0()); }
-		RULE_ID
-		{ after(grammarAccess.getColonneIDAccess().getNomIDTerminalRuleCall_0()); }
 	)
 ;
 finally {

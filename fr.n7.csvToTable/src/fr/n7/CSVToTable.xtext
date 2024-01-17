@@ -8,7 +8,7 @@ Tableau:
 ;
 
 LigneNom:
-	ColonneID (',' colonnes+=ID)*
+	colonnes+=ID (',' colonnes+=ID)*
 ;
 
 ColonneID:

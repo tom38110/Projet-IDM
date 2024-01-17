@@ -3,7 +3,7 @@
  */
 package fr.n7.cSVToTable;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.n7.cSVToTable.ColonneID#getColonnes <em>Colonnes</em>}</li>
  *   <li>{@link fr.n7.cSVToTable.ColonneID#getNom <em>Nom</em>}</li>
  * </ul>
  *
@@ -22,20 +21,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ColonneID extends LigneNom
+public interface ColonneID extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Colonnes</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Colonnes</em>' attribute list.
-   * @see fr.n7.cSVToTable.CSVToTablePackage#getColonneID_Colonnes()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getColonnes();
-
   /**
    * Returns the value of the '<em><b>Nom</b></em>' attribute.
    * <!-- begin-user-doc -->

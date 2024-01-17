@@ -233,38 +233,51 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLigneNom"
-    // InternalCSVToTable.g:117:1: ruleLigneNom returns [EObject current=null] : (this_ColonneID_0= ruleColonneID (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* ) ;
+    // InternalCSVToTable.g:117:1: ruleLigneNom returns [EObject current=null] : ( ( (lv_colonnes_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* ) ;
     public final EObject ruleLigneNom() throws RecognitionException {
         EObject current = null;
 
+        Token lv_colonnes_0_0=null;
         Token otherlv_1=null;
         Token lv_colonnes_2_0=null;
-        EObject this_ColonneID_0 = null;
-
 
 
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:123:2: ( (this_ColonneID_0= ruleColonneID (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* ) )
-            // InternalCSVToTable.g:124:2: (this_ColonneID_0= ruleColonneID (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* )
+            // InternalCSVToTable.g:123:2: ( ( ( (lv_colonnes_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* ) )
+            // InternalCSVToTable.g:124:2: ( ( (lv_colonnes_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* )
             {
-            // InternalCSVToTable.g:124:2: (this_ColonneID_0= ruleColonneID (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* )
-            // InternalCSVToTable.g:125:3: this_ColonneID_0= ruleColonneID (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )*
+            // InternalCSVToTable.g:124:2: ( ( (lv_colonnes_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )* )
+            // InternalCSVToTable.g:125:3: ( (lv_colonnes_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )*
             {
+            // InternalCSVToTable.g:125:3: ( (lv_colonnes_0_0= RULE_ID ) )
+            // InternalCSVToTable.g:126:4: (lv_colonnes_0_0= RULE_ID )
+            {
+            // InternalCSVToTable.g:126:4: (lv_colonnes_0_0= RULE_ID )
+            // InternalCSVToTable.g:127:5: lv_colonnes_0_0= RULE_ID
+            {
+            lv_colonnes_0_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
-            			newCompositeNode(grammarAccess.getLigneNomAccess().getColonneIDParserRuleCall_0());
-            		
-            pushFollow(FOLLOW_4);
-            this_ColonneID_0=ruleColonneID();
+            					newLeafNode(lv_colonnes_0_0, grammarAccess.getLigneNomAccess().getColonnesIDTerminalRuleCall_0_0());
+            				
 
-            state._fsp--;
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLigneNomRule());
+            					}
+            					addWithLastConsumed(
+            						current,
+            						"colonnes",
+            						lv_colonnes_0_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
 
 
-            			current = this_ColonneID_0;
-            			afterParserOrEnumRuleCall();
-            		
-            // InternalCSVToTable.g:133:3: (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )*
+            }
+
+            // InternalCSVToTable.g:143:3: (otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -277,17 +290,17 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalCSVToTable.g:134:4: otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) )
+            	    // InternalCSVToTable.g:144:4: otherlv_1= ',' ( (lv_colonnes_2_0= RULE_ID ) )
             	    {
             	    otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getLigneNomAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalCSVToTable.g:138:4: ( (lv_colonnes_2_0= RULE_ID ) )
-            	    // InternalCSVToTable.g:139:5: (lv_colonnes_2_0= RULE_ID )
+            	    // InternalCSVToTable.g:148:4: ( (lv_colonnes_2_0= RULE_ID ) )
+            	    // InternalCSVToTable.g:149:5: (lv_colonnes_2_0= RULE_ID )
             	    {
-            	    // InternalCSVToTable.g:139:5: (lv_colonnes_2_0= RULE_ID )
-            	    // InternalCSVToTable.g:140:6: lv_colonnes_2_0= RULE_ID
+            	    // InternalCSVToTable.g:149:5: (lv_colonnes_2_0= RULE_ID )
+            	    // InternalCSVToTable.g:150:6: lv_colonnes_2_0= RULE_ID
             	    {
             	    lv_colonnes_2_0=(Token)match(input,RULE_ID,FOLLOW_4); 
 
@@ -340,103 +353,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleLigneNom"
 
 
-    // $ANTLR start "entryRuleColonneID"
-    // InternalCSVToTable.g:161:1: entryRuleColonneID returns [EObject current=null] : iv_ruleColonneID= ruleColonneID EOF ;
-    public final EObject entryRuleColonneID() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleColonneID = null;
-
-
-        try {
-            // InternalCSVToTable.g:161:50: (iv_ruleColonneID= ruleColonneID EOF )
-            // InternalCSVToTable.g:162:2: iv_ruleColonneID= ruleColonneID EOF
-            {
-             newCompositeNode(grammarAccess.getColonneIDRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleColonneID=ruleColonneID();
-
-            state._fsp--;
-
-             current =iv_ruleColonneID; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleColonneID"
-
-
-    // $ANTLR start "ruleColonneID"
-    // InternalCSVToTable.g:168:1: ruleColonneID returns [EObject current=null] : ( (lv_nom_0_0= RULE_ID ) ) ;
-    public final EObject ruleColonneID() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_nom_0_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalCSVToTable.g:174:2: ( ( (lv_nom_0_0= RULE_ID ) ) )
-            // InternalCSVToTable.g:175:2: ( (lv_nom_0_0= RULE_ID ) )
-            {
-            // InternalCSVToTable.g:175:2: ( (lv_nom_0_0= RULE_ID ) )
-            // InternalCSVToTable.g:176:3: (lv_nom_0_0= RULE_ID )
-            {
-            // InternalCSVToTable.g:176:3: (lv_nom_0_0= RULE_ID )
-            // InternalCSVToTable.g:177:4: lv_nom_0_0= RULE_ID
-            {
-            lv_nom_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            				newLeafNode(lv_nom_0_0, grammarAccess.getColonneIDAccess().getNomIDTerminalRuleCall_0());
-            			
-
-            				if (current==null) {
-            					current = createModelElement(grammarAccess.getColonneIDRule());
-            				}
-            				setWithLastConsumed(
-            					current,
-            					"nom",
-            					lv_nom_0_0,
-            					"org.eclipse.xtext.common.Terminals.ID");
-            			
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleColonneID"
-
-
     // $ANTLR start "entryRuleLigneValeur"
-    // InternalCSVToTable.g:196:1: entryRuleLigneValeur returns [EObject current=null] : iv_ruleLigneValeur= ruleLigneValeur EOF ;
+    // InternalCSVToTable.g:171:1: entryRuleLigneValeur returns [EObject current=null] : iv_ruleLigneValeur= ruleLigneValeur EOF ;
     public final EObject entryRuleLigneValeur() throws RecognitionException {
         EObject current = null;
 
@@ -444,8 +362,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCSVToTable.g:196:52: (iv_ruleLigneValeur= ruleLigneValeur EOF )
-            // InternalCSVToTable.g:197:2: iv_ruleLigneValeur= ruleLigneValeur EOF
+            // InternalCSVToTable.g:171:52: (iv_ruleLigneValeur= ruleLigneValeur EOF )
+            // InternalCSVToTable.g:172:2: iv_ruleLigneValeur= ruleLigneValeur EOF
             {
              newCompositeNode(grammarAccess.getLigneValeurRule()); 
             pushFollow(FOLLOW_1);
@@ -472,7 +390,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLigneValeur"
-    // InternalCSVToTable.g:203:1: ruleLigneValeur returns [EObject current=null] : ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* ) ;
+    // InternalCSVToTable.g:178:1: ruleLigneValeur returns [EObject current=null] : ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* ) ;
     public final EObject ruleLigneValeur() throws RecognitionException {
         EObject current = null;
 
@@ -486,17 +404,17 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:209:2: ( ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* ) )
-            // InternalCSVToTable.g:210:2: ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* )
+            // InternalCSVToTable.g:184:2: ( ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* ) )
+            // InternalCSVToTable.g:185:2: ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* )
             {
-            // InternalCSVToTable.g:210:2: ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* )
-            // InternalCSVToTable.g:211:3: ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )*
+            // InternalCSVToTable.g:185:2: ( ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )* )
+            // InternalCSVToTable.g:186:3: ( (lv_valeurs_0_0= ruleDonnee ) ) (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )*
             {
-            // InternalCSVToTable.g:211:3: ( (lv_valeurs_0_0= ruleDonnee ) )
-            // InternalCSVToTable.g:212:4: (lv_valeurs_0_0= ruleDonnee )
+            // InternalCSVToTable.g:186:3: ( (lv_valeurs_0_0= ruleDonnee ) )
+            // InternalCSVToTable.g:187:4: (lv_valeurs_0_0= ruleDonnee )
             {
-            // InternalCSVToTable.g:212:4: (lv_valeurs_0_0= ruleDonnee )
-            // InternalCSVToTable.g:213:5: lv_valeurs_0_0= ruleDonnee
+            // InternalCSVToTable.g:187:4: (lv_valeurs_0_0= ruleDonnee )
+            // InternalCSVToTable.g:188:5: lv_valeurs_0_0= ruleDonnee
             {
 
             					newCompositeNode(grammarAccess.getLigneValeurAccess().getValeursDonneeParserRuleCall_0_0());
@@ -523,7 +441,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCSVToTable.g:230:3: (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )*
+            // InternalCSVToTable.g:205:3: (otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) ) )*
             loop2:
             do {
                 int alt2=2;
@@ -536,17 +454,17 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalCSVToTable.g:231:4: otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) )
+            	    // InternalCSVToTable.g:206:4: otherlv_1= ',' ( (lv_valeurs_2_0= ruleDonnee ) )
             	    {
             	    otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getLigneValeurAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalCSVToTable.g:235:4: ( (lv_valeurs_2_0= ruleDonnee ) )
-            	    // InternalCSVToTable.g:236:5: (lv_valeurs_2_0= ruleDonnee )
+            	    // InternalCSVToTable.g:210:4: ( (lv_valeurs_2_0= ruleDonnee ) )
+            	    // InternalCSVToTable.g:211:5: (lv_valeurs_2_0= ruleDonnee )
             	    {
-            	    // InternalCSVToTable.g:236:5: (lv_valeurs_2_0= ruleDonnee )
-            	    // InternalCSVToTable.g:237:6: lv_valeurs_2_0= ruleDonnee
+            	    // InternalCSVToTable.g:211:5: (lv_valeurs_2_0= ruleDonnee )
+            	    // InternalCSVToTable.g:212:6: lv_valeurs_2_0= ruleDonnee
             	    {
 
             	    						newCompositeNode(grammarAccess.getLigneValeurAccess().getValeursDonneeParserRuleCall_1_1_0());
@@ -605,7 +523,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDonnee"
-    // InternalCSVToTable.g:259:1: entryRuleDonnee returns [String current=null] : iv_ruleDonnee= ruleDonnee EOF ;
+    // InternalCSVToTable.g:234:1: entryRuleDonnee returns [String current=null] : iv_ruleDonnee= ruleDonnee EOF ;
     public final String entryRuleDonnee() throws RecognitionException {
         String current = null;
 
@@ -613,8 +531,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCSVToTable.g:259:46: (iv_ruleDonnee= ruleDonnee EOF )
-            // InternalCSVToTable.g:260:2: iv_ruleDonnee= ruleDonnee EOF
+            // InternalCSVToTable.g:234:46: (iv_ruleDonnee= ruleDonnee EOF )
+            // InternalCSVToTable.g:235:2: iv_ruleDonnee= ruleDonnee EOF
             {
              newCompositeNode(grammarAccess.getDonneeRule()); 
             pushFollow(FOLLOW_1);
@@ -641,7 +559,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDonnee"
-    // InternalCSVToTable.g:266:1: ruleDonnee returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Valeur_0= ruleValeur | this_Date_1= ruleDate ) ;
+    // InternalCSVToTable.g:241:1: ruleDonnee returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Valeur_0= ruleValeur | this_Date_1= ruleDate ) ;
     public final AntlrDatatypeRuleToken ruleDonnee() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -654,21 +572,21 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:272:2: ( (this_Valeur_0= ruleValeur | this_Date_1= ruleDate ) )
-            // InternalCSVToTable.g:273:2: (this_Valeur_0= ruleValeur | this_Date_1= ruleDate )
+            // InternalCSVToTable.g:247:2: ( (this_Valeur_0= ruleValeur | this_Date_1= ruleDate ) )
+            // InternalCSVToTable.g:248:2: (this_Valeur_0= ruleValeur | this_Date_1= ruleDate )
             {
-            // InternalCSVToTable.g:273:2: (this_Valeur_0= ruleValeur | this_Date_1= ruleDate )
+            // InternalCSVToTable.g:248:2: (this_Valeur_0= ruleValeur | this_Date_1= ruleDate )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==RULE_ID) ) {
                 int LA3_1 = input.LA(2);
 
-                if ( ((LA3_1>=12 && LA3_1<=13)) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_1==EOF||LA3_1==11||LA3_1==14) ) {
+                if ( (LA3_1==EOF||LA3_1==11||LA3_1==14) ) {
                     alt3=1;
+                }
+                else if ( ((LA3_1>=12 && LA3_1<=13)) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -685,7 +603,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalCSVToTable.g:274:3: this_Valeur_0= ruleValeur
+                    // InternalCSVToTable.g:249:3: this_Valeur_0= ruleValeur
                     {
 
                     			newCompositeNode(grammarAccess.getDonneeAccess().getValeurParserRuleCall_0());
@@ -705,7 +623,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCSVToTable.g:285:3: this_Date_1= ruleDate
+                    // InternalCSVToTable.g:260:3: this_Date_1= ruleDate
                     {
 
                     			newCompositeNode(grammarAccess.getDonneeAccess().getDateParserRuleCall_1());
@@ -747,7 +665,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDate"
-    // InternalCSVToTable.g:299:1: entryRuleDate returns [String current=null] : iv_ruleDate= ruleDate EOF ;
+    // InternalCSVToTable.g:274:1: entryRuleDate returns [String current=null] : iv_ruleDate= ruleDate EOF ;
     public final String entryRuleDate() throws RecognitionException {
         String current = null;
 
@@ -755,8 +673,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCSVToTable.g:299:44: (iv_ruleDate= ruleDate EOF )
-            // InternalCSVToTable.g:300:2: iv_ruleDate= ruleDate EOF
+            // InternalCSVToTable.g:274:44: (iv_ruleDate= ruleDate EOF )
+            // InternalCSVToTable.g:275:2: iv_ruleDate= ruleDate EOF
             {
              newCompositeNode(grammarAccess.getDateRule()); 
             pushFollow(FOLLOW_1);
@@ -783,7 +701,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDate"
-    // InternalCSVToTable.g:306:1: ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) ) ;
+    // InternalCSVToTable.g:281:1: ruleDate returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) ) ;
     public final AntlrDatatypeRuleToken ruleDate() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -797,10 +715,10 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:312:2: ( ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) ) )
-            // InternalCSVToTable.g:313:2: ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) )
+            // InternalCSVToTable.g:287:2: ( ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) ) )
+            // InternalCSVToTable.g:288:2: ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) )
             {
-            // InternalCSVToTable.g:313:2: ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) )
+            // InternalCSVToTable.g:288:2: ( (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID ) | (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -828,10 +746,10 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalCSVToTable.g:314:3: (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID )
+                    // InternalCSVToTable.g:289:3: (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID )
                     {
-                    // InternalCSVToTable.g:314:3: (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID )
-                    // InternalCSVToTable.g:315:4: this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID
+                    // InternalCSVToTable.g:289:3: (this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID )
+                    // InternalCSVToTable.g:290:4: this_ID_0= RULE_ID kw= '-' this_ID_2= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_5); 
 
@@ -859,10 +777,10 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCSVToTable.g:336:3: (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID )
+                    // InternalCSVToTable.g:311:3: (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID )
                     {
-                    // InternalCSVToTable.g:336:3: (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID )
-                    // InternalCSVToTable.g:337:4: this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID
+                    // InternalCSVToTable.g:311:3: (this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID )
+                    // InternalCSVToTable.g:312:4: this_ID_3= RULE_ID kw= '/' this_ID_5= RULE_ID
                     {
                     this_ID_3=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -912,7 +830,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValeur"
-    // InternalCSVToTable.g:361:1: entryRuleValeur returns [String current=null] : iv_ruleValeur= ruleValeur EOF ;
+    // InternalCSVToTable.g:336:1: entryRuleValeur returns [String current=null] : iv_ruleValeur= ruleValeur EOF ;
     public final String entryRuleValeur() throws RecognitionException {
         String current = null;
 
@@ -920,8 +838,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCSVToTable.g:361:46: (iv_ruleValeur= ruleValeur EOF )
-            // InternalCSVToTable.g:362:2: iv_ruleValeur= ruleValeur EOF
+            // InternalCSVToTable.g:336:46: (iv_ruleValeur= ruleValeur EOF )
+            // InternalCSVToTable.g:337:2: iv_ruleValeur= ruleValeur EOF
             {
              newCompositeNode(grammarAccess.getValeurRule()); 
             pushFollow(FOLLOW_1);
@@ -948,7 +866,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValeur"
-    // InternalCSVToTable.g:368:1: ruleValeur returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant ) ;
+    // InternalCSVToTable.g:343:1: ruleValeur returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant ) ;
     public final AntlrDatatypeRuleToken ruleValeur() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -960,10 +878,10 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:374:2: ( (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant ) )
-            // InternalCSVToTable.g:375:2: (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant )
+            // InternalCSVToTable.g:349:2: ( (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant ) )
+            // InternalCSVToTable.g:350:2: (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant )
             {
-            // InternalCSVToTable.g:375:2: (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant )
+            // InternalCSVToTable.g:350:2: (this_ID_0= RULE_ID | this_Flottant_1= ruleFlottant )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -991,7 +909,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalCSVToTable.g:376:3: this_ID_0= RULE_ID
+                    // InternalCSVToTable.g:351:3: this_ID_0= RULE_ID
                     {
                     this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1004,7 +922,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCSVToTable.g:384:3: this_Flottant_1= ruleFlottant
+                    // InternalCSVToTable.g:359:3: this_Flottant_1= ruleFlottant
                     {
 
                     			newCompositeNode(grammarAccess.getValeurAccess().getFlottantParserRuleCall_1());
@@ -1046,7 +964,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFlottant"
-    // InternalCSVToTable.g:398:1: entryRuleFlottant returns [String current=null] : iv_ruleFlottant= ruleFlottant EOF ;
+    // InternalCSVToTable.g:373:1: entryRuleFlottant returns [String current=null] : iv_ruleFlottant= ruleFlottant EOF ;
     public final String entryRuleFlottant() throws RecognitionException {
         String current = null;
 
@@ -1054,8 +972,8 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCSVToTable.g:398:48: (iv_ruleFlottant= ruleFlottant EOF )
-            // InternalCSVToTable.g:399:2: iv_ruleFlottant= ruleFlottant EOF
+            // InternalCSVToTable.g:373:48: (iv_ruleFlottant= ruleFlottant EOF )
+            // InternalCSVToTable.g:374:2: iv_ruleFlottant= ruleFlottant EOF
             {
              newCompositeNode(grammarAccess.getFlottantRule()); 
             pushFollow(FOLLOW_1);
@@ -1082,7 +1000,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFlottant"
-    // InternalCSVToTable.g:405:1: ruleFlottant returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) ;
+    // InternalCSVToTable.g:380:1: ruleFlottant returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) ;
     public final AntlrDatatypeRuleToken ruleFlottant() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1094,11 +1012,11 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCSVToTable.g:411:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) )
-            // InternalCSVToTable.g:412:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
+            // InternalCSVToTable.g:386:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ ) )
+            // InternalCSVToTable.g:387:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
             {
-            // InternalCSVToTable.g:412:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
-            // InternalCSVToTable.g:413:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+
+            // InternalCSVToTable.g:387:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+ )
+            // InternalCSVToTable.g:388:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )+
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
@@ -1107,7 +1025,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_ID_0, grammarAccess.getFlottantAccess().getIDTerminalRuleCall_0());
             		
-            // InternalCSVToTable.g:420:3: (kw= '.' this_ID_2= RULE_ID )+
+            // InternalCSVToTable.g:395:3: (kw= '.' this_ID_2= RULE_ID )+
             int cnt6=0;
             loop6:
             do {
@@ -1121,7 +1039,7 @@ public class InternalCSVToTableParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalCSVToTable.g:421:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalCSVToTable.g:396:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,14,FOLLOW_3); 
 

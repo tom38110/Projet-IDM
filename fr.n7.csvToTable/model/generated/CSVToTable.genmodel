@@ -9,9 +9,9 @@
     <genClasses ecoreClass="CSVToTable.ecore#//Tableau"/>
     <genClasses ecoreClass="CSVToTable.ecore#//LigneNom">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CSVToTable.ecore#//LigneNom/lines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVToTable.ecore#//LigneNom/colonnes"/>
     </genClasses>
     <genClasses ecoreClass="CSVToTable.ecore#//ColonneID">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVToTable.ecore#//ColonneID/colonnes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CSVToTable.ecore#//ColonneID/nom"/>
     </genClasses>
     <genClasses ecoreClass="CSVToTable.ecore#//LigneValeur">
